@@ -1,12 +1,13 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meraki - Safe Teen Community</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Meraki - Safe Teen Community</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
         body {
             margin: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -231,261 +232,257 @@
     </style>
 </head>
 <body>
-    <div id="app">
-        <!-- Header Navigation -->
-        <header class="sticky top-0 z-10 bg-slate-900/80 backdrop-blur border-b border-white/10">
-            <div class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
-                <div class="flex items-center gap-2">
-                    <div class="w-8 h-8 rounded-xl bg-pink-500/20 grid place-items-center">
-                        <span class="text-pink-400 font-black">M</span>
-                    </div>
-                    <span class="font-semibold tracking-wide">Meraki</span>
-                </div>
-                <nav class="hidden md:flex items-center gap-4 text-sm">
-                    <button data-route="home" class="nav-btn px-3 py-1.5 rounded-lg active">Home</button>
-                    <button data-route="features" class="nav-btn px-3 py-1.5 rounded-lg">Features</button>
-                    <button data-route="voices" class="nav-btn px-3 py-1.5 rounded-lg">Voices</button>
-                    <button data-route="about" class="nav-btn px-3 py-1.5 rounded-lg">About</button>
-                    <button class="nav-forum-btn" id="header-forum-btn">
-                        <i class="fas fa-comments mr-1"></i> Go to Forum
+<div id="app">
+<!-- Header Navigation -->
+<header class="sticky top-0 z-10 bg-slate-900/80 backdrop-blur border-b border-white/10">
+<div class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-xl bg-pink-500/20 grid place-items-center">
+<span class="text-pink-400 font-black">M</span>
+</div>
+<span class="font-semibold tracking-wide">Meraki</span>
+</div>
+<nav class="hidden md:flex items-center gap-4 text-sm">
+<button class="nav-btn px-3 py-1.5 rounded-lg active" data-route="home">Home</button>
+<button class="nav-btn px-3 py-1.5 rounded-lg" data-route="features">Features</button>
+<button class="nav-btn px-3 py-1.5 rounded-lg" data-route="voices">Voices</button>
+<button class="nav-btn px-3 py-1.5 rounded-lg" data-route="about">About</button>
+<button class="nav-forum-btn" id="header-forum-btn">
+<i class="fas fa-comments mr-1"></i> Go to Forum
                     </button>
-                </nav>
-                <div class="hidden md:block text-[11px] text-slate-400 truncate max-w-[260px]">
-                    <span id="sync-status">Multi-Device Sync: ON</span>
-                </div>
-            </div>
-        </header>
-
-        <!-- Main Content -->
-        <main class="max-w-5xl mx-auto px-4 py-10">
-            <!-- Home Page (Default) -->
-            <section id="home-page" class="page active fade-in">
-                <div class="page-header">
-                    <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight">
+</nav>
+<div class="hidden md:block text-[11px] text-slate-400 truncate max-w-[260px]">
+<span id="sync-status">Multi-Device Sync: ON</span>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="max-w-5xl mx-auto px-4 py-10">
+<!-- Home Page (Default) -->
+<section class="page active fade-in" id="home-page">
+<div class="page-header">
+<h1 class="text-5xl md:text-6xl font-extrabold tracking-tight">
                         Welcome to <span class="slogan">Meraki</span>
-                    </h1>
-                    <p class="mt-5 text-lg text-slate-300 max-w-2xl mx-auto">
+</h1>
+<p class="mt-5 text-lg text-slate-300 max-w-2xl mx-auto">
                         A safe, anonymous space where teenagers can share, be heard, and
                         support each other. Your identity remains yours. Always.
                     </p>
-                    <p class="mt-3 text-xl text-pink-300 font-medium">Dil Ki Baat Bina Filter</p>
-                </div>
-
-                <div class="forum-access-panel">
-                    <h3 class="text-xl font-semibold mb-2">Join the Conversation</h3>
-                    <p class="text-slate-300">Share your thoughts and connect with others in our safe community forum</p>
-                    <button class="cta-button btn-forum text-white" data-next="forum">
-                        <i class="fas fa-comments"></i> Go to Forum
+<p class="mt-3 text-xl text-pink-300 font-medium">Dil Ki Baat Bina Filter</p>
+</div>
+<div class="forum-access-panel">
+<h3 class="text-xl font-semibold mb-2">Join the Conversation</h3>
+<p class="text-slate-300">Share your thoughts and connect with others in our safe community forum</p>
+<button class="cta-button btn-forum text-white" data-next="forum">
+<i class="fas fa-comments"></i> Go to Forum
                     </button>
-                </div>
-
-                <div class="grid gap-8 place-items-center text-center mt-12">
-                    <button data-next="features" class="btn-primary px-6 py-3 rounded-2xl text-white font-semibold shadow-lg">
+</div>
+<div class="grid gap-8 place-items-center text-center mt-12">
+<button class="btn-primary px-6 py-3 rounded-2xl text-white font-semibold shadow-lg" data-next="features">
                         Explore Features →
                     </button>
-                </div>
-            </section>
-
-            <!-- Features Page -->
-            <section id="features-page" class="page hidden max-w-3xl mx-auto">
-                <div class="page-header">
-                    <h2 class="text-3xl font-bold mb-2">Key Features</h2>
-                    <p class="text-slate-300">Discover what makes Meraki a safe space for teens</p>
-                </div>
-
-                <div class="forum-access-panel">
-                    <h3 class="text-xl font-semibold mb-2">Ready to Connect?</h3>
-                    <p class="text-slate-300">Join our community forum to share and support others</p>
-                    <button class="cta-button btn-forum text-white" data-next="forum">
-                        <i class="fas fa-comments"></i> Go to Forum
+</div>
+</section>
+<!-- Features Page -->
+<section class="page hidden max-w-3xl mx-auto" id="features-page">
+<div class="page-header">
+<h2 class="text-3xl font-bold mb-2">Key Features</h2>
+<p class="text-slate-300">Discover what makes Meraki a safe space for teens</p>
+</div>
+<div class="forum-access-panel">
+<h3 class="text-xl font-semibold mb-2">Ready to Connect?</h3>
+<p class="text-slate-300">Join our community forum to share and support others</p>
+<button class="cta-button btn-forum text-white" data-next="forum">
+<i class="fas fa-comments"></i> Go to Forum
                     </button>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div class="card p-4">
-                        <div class="feature-icon">
-                            <span>👤</span>
-                        </div>
-                        <div class="font-semibold">Anonymous profiles</div>
-                        <div class="text-slate-300 text-sm mt-1">No real names. You control what you share.</div>
-                    </div>
-                    <div class="card p-4">
-                        <div class="feature-icon">
-                            <span>🤖</span>
-                        </div>
-                        <div class="font-semibold">AI moderation</div>
-                        <div class="text-slate-300 text-sm mt-1">Keyword filtering helps block abuse.</div>
-                    </div>
-                    <div class="card p-4">
-                        <div class="feature-icon">
-                            <span>🔊</span>
-                        </div>
-                        <div class="font-semibold">Customizable voices</div>
-                        <div class="text-slate-300 text-sm mt-1">Comforting voices using your device's TTS.</div>
-                    </div>
-                    <div class="card p-4">
-                        <div class="feature-icon">
-                            <span>🔑</span>
-                        </div>
-                        <div class="font-semibold">Delete key control</div>
-                        <div class="text-slate-300 text-sm mt-1">Delete your content with your private key.</div>
-                    </div>
-                    <div class="card p-4">
-                        <div class="feature-icon">
-                            <span>🔄</span>
-                        </div>
-                        <div class="font-semibold">Multi-device sync</div>
-                        <div class="text-slate-300 text-sm mt-1">Posts visible across all your devices.</div>
-                    </div>
-                    <div class="card p-4">
-                        <div class="feature-icon">
-                            <span>💝</span>
-                        </div>
-                        <div class="font-semibold">Trust system (concept)</div>
-                        <div class="text-slate-300 text-sm mt-1">Coming later to highlight supportive users.</div>
-                    </div>
-                </div>
-                <div class="flex gap-3 mt-8">
-                    <button data-prev="home" class="btn-secondary px-4 py-2 rounded-xl">
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="card p-4">
+<div class="feature-icon">
+<span>👤</span>
+</div>
+<div class="font-semibold">Anonymous profiles</div>
+<div class="text-slate-300 text-sm mt-1">No real names. You control what you share.</div>
+</div>
+<div class="card p-4">
+<div class="feature-icon">
+<span>🤖</span>
+</div>
+<div class="font-semibold">AI moderation</div>
+<div class="text-slate-300 text-sm mt-1">Keyword filtering helps block abuse.</div>
+</div>
+<div class="card p-4">
+<div class="feature-icon">
+<span>🔊</span>
+</div>
+<div class="font-semibold">Customizable voices</div>
+<div class="text-slate-300 text-sm mt-1">Comforting voices using your device's TTS.</div>
+</div>
+<div class="card p-4">
+<div class="feature-icon">
+<span>🔑</span>
+</div>
+<div class="font-semibold">Delete key control</div>
+<div class="text-slate-300 text-sm mt-1">Delete your content with your private key.</div>
+</div>
+<div class="card p-4">
+<div class="feature-icon">
+<span>🔄</span>
+</div>
+<div class="font-semibold">Multi-device sync</div>
+<div class="text-slate-300 text-sm mt-1">Posts visible across all your devices.</div>
+</div>
+<div class="card p-4">
+<div class="feature-icon">
+<span>💝</span>
+</div>
+<div class="font-semibold">Trust system (concept)</div>
+<div class="text-slate-300 text-sm mt-1">Coming later to highlight supportive users.</div>
+</div>
+</div>
+<div class="flex gap-3 mt-8">
+<button class="btn-secondary px-4 py-2 rounded-xl" data-prev="home">
                         ← Previous
                     </button>
-                    <button data-next="voices" class="btn-primary px-4 py-2 rounded-xl">
+<button class="btn-primary px-4 py-2 rounded-xl" data-next="voices">
                         Next →
                     </button>
-                </div>
-            </section>
+</div>
+</section>
+<!-- Voice Select Page -->
 
-            <!-- Voice Select Page -->
-            <section id="voices-page" class="page hidden max-w-3xl mx-auto">
-                <div class="page-header">
-                    <h2 class="text-3xl font-bold mb-2">Choose a Comforting Voice</h2>
-                    <p class="text-slate-300">Handpicked English voices from your system that sound supportive.</p>
-                </div>
+<section class="page active fade-in max-w-3xl mx-auto" id="voices-page">
+<div class="page-header">
+<h2 class="text-3xl font-bold mb-2">Choose a Comforting Voice</h2>
+<p class="text-slate-300 mb-4">
+            Handpicked English voices from your system that sound supportive.
+        </p>
+</div>
+<div class="forum-access-panel">
+<h3 class="text-xl font-semibold mb-2">Want to share your thoughts?</h3>
+<p class="text-slate-300">Our community forum is ready for you to join the conversation</p>
+<button class="cta-button btn-forum text-white" data-next="forum">
+<i class="fas fa-comments"></i> Go to Forum
+        </button>
+</div>
+<div class="card p-4 mb-4">
+<label class="block mb-2">
+<span class="text-sm text-slate-300">Sample phrase</span>
+<input class="w-full mt-1 px-3 py-2 rounded-xl bg-slate-900 border border-white/10 outline-none" id="voice-sample" value="Hey! You are safe here. Take a breath. You matter."/>
+</label>
+</div>
+<div class="grid gap-4" id="voices-container">
+<!-- Voices will be populated by JavaScript -->
+</div>
+<div class="flex gap-3 mt-8">
+<button class="btn-secondary px-4 py-2 rounded-xl" data-prev="features">
+            ← Previous
+        </button>
+<button class="btn-primary px-4 py-2 rounded-xl" data-next="about">
+            Next →
+        </button>
+</div>
+</section>
 
-                <div class="forum-access-panel">
-                    <h3 class="text-xl font-semibold mb-2">Want to share your thoughts?</h3>
-                    <p class="text-slate-300">Our community forum is ready for you to join the conversation</p>
-                    <button class="cta-button btn-forum text-white" data-next="forum">
-                        <i class="fas fa-comments"></i> Go to Forum
+<!-- About Page -->
+<section class="page hidden max-w-3xl mx-auto" id="about-page">
+<div class="page-header">
+<h2 class="text-3xl font-bold mb-4">What is Meraki?</h2>
+</div>
+<div class="forum-access-panel">
+<h3 class="text-xl font-semibold mb-2">Join our supportive community</h3>
+<p class="text-slate-300">Share your experiences and connect with others in our safe space</p>
+<button class="cta-button btn-forum text-white" data-next="forum">
+<i class="fas fa-comments"></i> Go to Forum
                     </button>
-                </div>
-
-                <div class="card p-4 mb-4">
-                    <label class="block mb-2">
-                        <span class="text-sm text-slate-300">Sample phrase</span>
-                        <input id="voice-sample" class="w-full mt-1 px-3 py-2 rounded-xl bg-slate-900 border border-white/10 outline-none" 
-                               value="Hey! You are safe here. Take a breath. You matter.">
-                    </label>
-                </div>
-
-                <div class="grid gap-4" id="voices-container">
-                    <!-- Voices will be populated by JavaScript -->
-                </div>
-
-                <div class="flex gap-3 mt-8">
-                    <button data-prev="features" class="btn-secondary px-4 py-2 rounded-xl">
-                        ← Previous
-                    </button>
-                    <button data-next="about" class="btn-primary px-4 py-2 rounded-xl">
-                        Next →
-                    </button>
-                </div>
-            </section>
-
-            <!-- About Page -->
-            <section id="about-page" class="page hidden max-w-3xl mx-auto">
-                <div class="page-header">
-                    <h2 class="text-3xl font-bold mb-4">What is Meraki?</h2>
-                </div>
-
-                <div class="forum-access-panel">
-                    <h3 class="text-xl font-semibold mb-2">Join our supportive community</h3>
-                    <p class="text-slate-300">Share your experiences and connect with others in our safe space</p>
-                    <button class="cta-button btn-forum text-white" data-next="forum">
-                        <i class="fas fa-comments"></i> Go to Forum
-                    </button>
-                </div>
-
-                <p class="text-slate-300 leading-7">
+</div>
+<p class="text-slate-300 leading-7">
                     Meraki is a safe, anonymous teen community focused on kindness and
                     support. There are no real names or IDs. Share what you feel, reply to
                     others, and choose a comforting voice to hear supportive messages.
                     AI-powered keyword filtering reduces harmful content, and a private
                     delete key gives you total control over your posts across devices.
                 </p>
-                <div class="flex gap-3 mt-8">
-                    <button data-prev="voices" class="btn-secondary px-4 py-2 rounded-xl">
+<div class="flex gap-3 mt-8">
+<button class="btn-secondary px-4 py-2 rounded-xl" data-prev="voices">
                         ← Previous
                     </button>
-                </div>
-            </section>
-
-            <!-- Forum Page -->
-            <section id="forum-page" class="page hidden max-w-4xl mx-auto">
-                <div class="flex items-center justify-between mb-4">
-                    <h2 class="text-3xl font-bold">Community Wall</h2>
-                    <span class="text-xs px-2 py-1 rounded-lg border border-green-500/40 text-green-400">
+</div>
+</section>
+<!-- Forum Page -->
+<section class="page hidden max-w-4xl mx-auto" id="forum-page">
+<div class="flex items-center justify-between mb-4">
+<h2 class="text-3xl font-bold">Community Wall</h2>
+<span class="text-xs px-2 py-1 rounded-lg border border-green-500/40 text-green-400">
                         Multi-Device Sync: ON
                     </span>
-                </div>
-
-                <div class="card p-4 mb-6">
-                    <textarea id="new-post-text" class="w-full min-h-[100px] px-3 py-2 rounded-xl bg-slate-900 border border-white/10 outline-none" 
-                              placeholder="Share something. You are anonymous here. Be kind."></textarea>
-                    <div id="post-error" class="text-pink-300 text-sm mt-2 hidden"></div>
-                    <div class="mt-3 flex items-center gap-3">
-                        <button id="submit-post" class="btn-primary px-4 py-2 rounded-xl">Post</button>
-                        <button id="refresh-posts" class="btn-secondary px-3 py-2 rounded-xl">
-                            <i class="fas fa-sync-alt mr-1"></i> Refresh
+</div>
+<div class="card p-4 mb-6">
+<textarea class="w-full min-h-[100px] px-3 py-2 rounded-xl bg-slate-900 border border-white/10 outline-none" id="new-post-text" placeholder="Share something. You are anonymous here. Be kind."></textarea>
+<div class="text-pink-300 text-sm mt-2 hidden" id="post-error"></div>
+<div class="mt-3 flex items-center gap-3">
+<button class="btn-primary px-4 py-2 rounded-xl" id="submit-post">Post</button>
+<button class="btn-secondary px-3 py-2 rounded-xl" id="refresh-posts">
+<i class="fas fa-sync-alt mr-1"></i> Refresh
                         </button>
-                        <div class="ml-auto">
-                            <button id="delete-key-btn" class="btn-secondary px-3 py-2 rounded-xl text-xs">
+<div class="ml-auto">
+<button class="btn-secondary px-3 py-2 rounded-xl text-xs" id="delete-key-btn">
                                 Delete Key
                             </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="forum-posts" class="grid gap-4">
-                    <!-- Posts will be loaded here -->
-                </div>
-            </section>
-        </main>
-
-        <!-- Floating Forum Access Button -->
-        <div class="floating-forum-btn" id="forum-shortcut">
-            <i class="fas fa-comments"></i> Go to Forum
+</div>
+</div>
+</div>
+<div class="grid gap-4" id="forum-posts">
+<!-- Posts will be loaded here -->
+</div>
+</section>
+</main>
+<!-- Floating Forum Access Button -->
+<div class="floating-forum-btn" id="forum-shortcut">
+<i class="fas fa-comments"></i> Go to Forum
             <div class="tooltip">Join the conversation</div>
-        </div>
+</div>
+<!-- Delete Key Modal -->
+<div class="fixed inset-0 bg-black/70 flex items-center justify-center z-50 hidden" id="delete-key-modal">
+<div class="card p-6 max-w-md w-full mx-4">
+<h3 class="text-xl font-bold mb-4">Delete Key Manager</h3>
+<div class="mb-4">
+<label class="block text-sm text-slate-300 mb-2">Current Status:</label>
+<div class="text-sm p-2 rounded bg-slate-800" id="key-status"></div>
+</div>
+<div class="mb-4">
+<label class="block text-sm text-slate-300 mb-2">Set/Update Delete Key</label>
+<input class="w-full px-3 py-2 rounded-xl bg-slate-900 border border-white/10 outline-none" id="delete-key-input" placeholder="Enter your private delete key" type="password"/>
+</div>
+<div class="text-sm text-slate-400 mb-4" id="key-message"></div>
+<div class="flex gap-3 justify-end">
+<button class="btn-secondary px-4 py-2 rounded-xl" id="cancel-key">Cancel</button>
+<button class="btn-primary px-4 py-2 rounded-xl" id="save-key">Save</button>
+</div>
+</div>
+</div>
+<!-- Footer -->
 
-        <!-- Delete Key Modal -->
-        <div id="delete-key-modal" class="fixed inset-0 bg-black/70 flex items-center justify-center z-50 hidden">
-            <div class="card p-6 max-w-md w-full mx-4">
-                <h3 class="text-xl font-bold mb-4">Delete Key Manager</h3>
-                <div class="mb-4">
-                    <label class="block text-sm text-slate-300 mb-2">Current Status:</label>
-                    <div id="key-status" class="text-sm p-2 rounded bg-slate-800"></div>
-                </div>
-                <div class="mb-4">
-                    <label class="block text-sm text-slate-300 mb-2">Set/Update Delete Key</label>
-                    <input type="password" id="delete-key-input" class="w-full px-3 py-2 rounded-xl bg-slate-900 border border-white/10 outline-none" 
-                           placeholder="Enter your private delete key">
-                </div>
-                <div id="key-message" class="text-sm text-slate-400 mb-4"></div>
-                <div class="flex gap-3 justify-end">
-                    <button id="cancel-key" class="btn-secondary px-4 py-2 rounded-xl">Cancel</button>
-                    <button id="save-key" class="btn-primary px-4 py-2 rounded-xl">Save</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Footer -->
-        <footer class="max-w-5xl mx-auto px-4 py-8 text-xs text-slate-400">
+<!-- Voice Preview -->
+<div class="fixed right-4 bottom-24 w-[min(420px,calc(100%-2rem))] md:w-[420px]">
+<div class="rounded-2xl border border-white/10 bg-slate-900/80 backdrop-blur p-4 shadow-xl">
+<div class="text-sm text-slate-300 mb-2">Voice Preview</div>
+<textarea class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-white/10 outline-none min-h-[80px]" id="voice-preview-text">If you're reading this, you're already doing something brave. Proud of you.</textarea>
+<div class="mt-2 flex items-center justify-between">
+<div class="text-[11px] text-slate-400 truncate" id="selected-voice-info">
+        No voice selected
+      </div>
+<button class="btn-secondary px-3 py-1.5 text-xs rounded-lg" id="speak-preview-btn">
+        Speak
+      </button>
+</div>
+</div>
+</div>
+<footer class="max-w-5xl mx-auto px-4 py-8 text-xs text-slate-400">
             Made with care for teens. Privacy-first. No real names. ✨
         </footer>
-    </div>
-
-    <script>
+</div>
+<script>
         // Data storage functions with multi-device simulation
         const Storage = {
             // Generate a unique user ID that persists across sessions
@@ -864,93 +861,171 @@
         };
 
         // Voice functionality
-        const VoiceManager = {
-            selectedVoice: null,
-            
-            init() {
-                this.selectedVoice = Storage.getSelectedVoice();
-                this.renderVoices();
-                
-                // Event listener for sample text changes
-                document.getElementById('voice-sample').addEventListener('input', (e) => {
-                    // Update sample text for all voices
-                    document.querySelectorAll('.listen-btn').forEach(btn => {
-                        btn.dataset.sample = e.target.value;
-                    });
-                });
-            },
-            
-            renderVoices() {
-                const container = document.getElementById('voices-container');
-                const voices = [
-                    { name: 'Samantha', lang: 'en-US' },
-                    { name: 'Daniel', lang: 'en-GB' },
-                    { name: 'Google US English', lang: 'en-US' },
-                    { name: 'Karen', lang: 'en-AU' }
-                ];
-                
-                container.innerHTML = voices.map(voice => `
-                    <div class="voice-option card p-4 flex items-center justify-between gap-3">
-                        <div class="text-sm">
-                            <div class="font-medium">${voice.name}</div>
-                            <div class="text-slate-400">${voice.lang}</div>
-                        </div>
-                        <div class="flex items-center gap-2">
-                            <button class="select-voice-btn ${this.selectedVoice === voice.name ? 'btn-primary' : 'btn-secondary'} 
-                                    px-3 py-1.5 text-xs rounded-lg" data-voice="${voice.name}">
-                                ${this.selectedVoice === voice.name ? 'Selected' : 'Select'}
-                            </button>
-                            <button class="listen-btn btn-secondary px-3 py-1.5 text-xs rounded-lg" 
-                                    data-sample="Hey! You are safe here. Take a breath. You matter.">
-                                Listen
-                            </button>
-                        </div>
+        
+const VoiceManager = {
+    selectedVoice: null,
+    availableVoices: [],
+    isSpeaking: false,
+    
+    init() {
+        this.loadAvailableVoices();
+        this.setupEventListeners();
+        this.renderVoices();
+    },
+    
+    loadAvailableVoices() {
+        // These are common system voices that work across different devices
+        this.availableVoices = [
+            { name: 'Samantha', lang: 'en-US', type: 'female' },
+            { name: 'Daniel', lang: 'en-GB', type: 'male' },
+            { name: 'Karen', lang: 'en-AU', type: 'female' },
+            { name: 'Moira', lang: 'en-IE', type: 'female' },
+            { name: 'Tessa', lang: 'en-ZA', type: 'female' },
+            { name: 'Veena', lang: 'en-IN', type: 'female' },
+            { name: 'Fred', lang: 'en-US', type: 'male' },
+            { name: 'Alex', lang: 'en-US', type: 'male' }
+        ];
+    },
+    
+    setupEventListeners() {
+        // Update sample text for all voices when input changes
+        const sampleInput = document.getElementById('voice-sample');
+        if (sampleInput) {
+            sampleInput.addEventListener('input', (e) => {
+                this.updateAllVoiceSamples(e.target.value);
+            });
+        }
+        
+        // Speak preview text
+        const previewBtn = document.getElementById('speak-preview-btn');
+        if (previewBtn) {
+            previewBtn.addEventListener('click', () => {
+                this.speakPreview();
+            });
+        }
+    },
+    
+    updateAllVoiceSamples(sampleText) {
+        document.querySelectorAll('.listen-btn').forEach(btn => {
+            btn.dataset.sample = sampleText;
+        });
+    },
+    
+    renderVoices() {
+        const container = document.getElementById('voices-container');
+        if (!container) return;
+        const sampleText = document.getElementById('voice-sample') ? document.getElementById('voice-sample').value : 'Hey! You are safe here. Take a breath. You matter.';
+        
+        container.innerHTML = this.availableVoices.map(voice => `
+            <div class="voice-option card p-4 flex items-center justify-between gap-3">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full ${voice.type === 'male' ? 'bg-blue-500/20' : 'bg-pink-500/20'} grid place-items-center">
+                        <i class="fas ${voice.type === 'male' ? 'fa-male' : 'fa-female'} ${voice.type === 'male' ? 'text-blue-400' : 'text-pink-400'}"></i>
                     </div>
-                `).join('');
-                
-                // Add event listeners
-                document.querySelectorAll('.select-voice-btn').forEach(btn => {
-                    btn.addEventListener('click', () => {
-                        this.selectVoice(btn.dataset.voice);
-                    });
-                });
-                
-                document.querySelectorAll('.listen-btn').forEach(btn => {
-                    btn.addEventListener('click', () => {
-                        this.speak(btn.dataset.sample);
-                    });
-                });
-            },
+                    <div class="text-sm">
+                        <div class="font-medium">${voice.name}</div>
+                        <div class="text-slate-400">${voice.lang} • ${voice.type}</div>
+                    </div>
+                </div>
+                <div class="flex items-center gap-2">
+                    <button class="select-voice-btn ${this.selectedVoice === voice.name ? 'btn-primary' : 'btn-secondary'} 
+                            px-3 py-1.5 text-xs rounded-lg" data-voice="${voice.name}">
+                        ${this.selectedVoice === voice.name ? 'Selected' : 'Select'}
+                    </button>
+                    <button class="listen-btn btn-secondary px-3 py-1.5 text-xs rounded-lg" 
+                            data-sample="${sampleText}" data-voice="${voice.name}">
+                        Listen
+                    </button>
+                </div>
+            </div>
+        `).join('');
+        
+        // Add event listeners to the new buttons
+        this.addVoiceEventListeners();
+    },
+    
+    addVoiceEventListeners() {
+        document.querySelectorAll('.select-voice-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                this.selectVoice(btn.dataset.voice);
+            });
+        });
+        
+        document.querySelectorAll('.listen-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                this.speakSample(btn.dataset.sample, btn.dataset.voice);
+                btn.classList.add('voice-playing');
+                setTimeout(() => {
+                    btn.classList.remove('voice-playing');
+                }, 1500);
+            });
+        });
+    },
+    
+    selectVoice(voiceName) {
+        this.selectedVoice = voiceName;
+        this.renderVoices();
+        
+        const selectedVoice = this.availableVoices.find(v => v.name === voiceName);
+        if (selectedVoice) {
+            const info = document.getElementById('selected-voice-info');
+            if (info) {
+                info.textContent = `${selectedVoice.name} • ${selectedVoice.lang} • ${selectedVoice.type}`;
+            }
+        }
+        
+        this.speakText(`Selected ${voiceName} voice`);
+    },
+    
+    speakSample(sampleText, voiceName) {
+        const voice = this.availableVoices.find(v => v.name === voiceName);
+        if (voice) {
+            this.speakText(sampleText, voice);
+        }
+    },
+    
+    speakPreview() {
+        const textArea = document.getElementById('voice-preview-text');
+        const text = textArea ? textArea.value : '';
+        if (this.selectedVoice) {
+            const voice = this.availableVoices.find(v => v.name === this.selectedVoice);
+            this.speakText(text, voice);
+        } else {
+            this.speakText(text);
+        }
+    },
+    
+    speakText(text, voiceInfo = null) {
+        if ('speechSynthesis' in window) {
+            window.speechSynthesis.cancel();
+            const utterance = new SpeechSynthesisUtterance(text);
             
-            selectVoice(voiceName) {
-                this.selectedVoice = voiceName;
-                Storage.saveSelectedVoice(voiceName);
-                this.renderVoices();
-                
-                // Show confirmation
-                const sampleText = document.getElementById('voice-sample').value;
-                this.speak(`Voice selected. ${sampleText}`);
-            },
+            if (voiceInfo) {
+                utterance.rate = voiceInfo.type === 'male' ? 0.95 : 1.0;
+                utterance.pitch = voiceInfo.type === 'male' ? 1.0 : 1.1;
+            } else {
+                utterance.rate = 1.0;
+                utterance.pitch = 1.05;
+            }
+            utterance.volume = 0.9;
             
-            speak(text) {
-                if ('speechSynthesis' in window) {
-                    const utterance = new SpeechSynthesisUtterance(text);
-                    
-                    // Try to set the selected voice if available
-                    if (this.selectedVoice) {
-                        const voices = speechSynthesis.getVoices();
-                        const voice = voices.find(v => v.name.includes(this.selectedVoice));
-                        if (voice) utterance.voice = voice;
-                    }
-                    
-                    utterance.rate = 0.9;
-                    utterance.pitch = 1.1;
-                    speechSynthesis.speak(utterance);
-                } else {
-                    alert("Your browser doesn't support text-to-speech functionality.");
+            const voices = speechSynthesis.getVoices();
+            if (voiceInfo && voices.length > 0) {
+                const matchedVoice = voices.find(v => 
+                    v.name.includes(voiceInfo.name) || 
+                    v.lang.includes(voiceInfo.lang)
+                );
+                if (matchedVoice) {
+                    utterance.voice = matchedVoice;
                 }
             }
-        };
+            window.speechSynthesis.speak(utterance);
+        } else {
+            alert("Your browser doesn't support text-to-speech functionality.");
+        }
+    }
+};
+
 
         // Delete Key Manager
         const DeleteKeyManager = {
