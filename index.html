@@ -206,6 +206,25 @@
                 <p class="mt-4 text-2xl md:text-4xl font-poppins font-medium text-green-700 dark:text-green-100">
                     Dil ki Baat, Bina Filter
                 </p>
+                
+                <!-- YouTube Video -->
+                <div class="mt-10 mx-auto max-w-4xl">
+                    <div class="relative pb-[56.25%] h-0 overflow-hidden rounded-lg shadow-lg border border-green-300 dark:border-green-600">
+                        <iframe 
+                            id="hero-video"
+                            class="absolute top-0 left-0 w-full h-full" 
+                            src="https://www.youtube.com/embed/dKU1OLrvOn4?autoplay=1&mute=1&controls=1&modestbranding=1&rel=0&start=0" 
+                            title="Meraki Inspirational Film" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <p class="mt-3 text-sm text-green-700 dark:text-green-200 italic">
+                        Watch our inspirational short film 'Sinking Feeling' (preview up to 41s)
+                    </p>
+                </div>
+                
                 <p class="mt-6 max-w-2xl mx-auto text-lg md:text-xl text-green-800 dark:text-cream-200">
                     A safe, anonymous space where teens can share, connect, and support each other without fear of judgment.
                 </p>
@@ -239,8 +258,20 @@
                     Solution: MERAKI
                 </h2>
                 <p class="text-lg text-green-800 dark:text-cream-200 leading-relaxed">
-                    Meraki aims to be an anonymous chat and call app for teens and young adults who often feel unheard in today’s fast-paced, chaotic world. The platform provides a safe space to open up, connect with people their age globally, and share emotions without fear of judgment. With soothing AI voices, anonymous profiles, trust-based ratings, and the option to help or be helped, Meraki builds a supportive and stigma-free community for authentic human connection.
+                    Meraki aims to be an anonymous chat and call app for teens and young adults who often feel unheard in today's fast-paced, chaotic world. The platform provides a safe space to open up, connect with people their age globally, and share emotions without fear of judgment. With soothing AI voices, anonymous profiles, trust-based ratings, and the option to help or be helped, Meraki builds a supportive and stigma-free community for authentic human connection.
                 </p>
+                
+                <!-- Added Image - Better mental health/support theme -->
+                <div class="mt-10 mx-auto w-full md:w-3/5">
+                    <img 
+                        src="https://as1.ftcdn.net/v2/jpg/01/98/09/90/500_F_198099099_raOOpUrklTPgAbrHmIm9sdni0VeGxChf.jpg" 
+                        alt="Supportive connection between people" 
+                        class="w-full rounded-lg shadow-md border border-green-500"
+                    >
+                    <p class="mt-3 text-sm text-green-700 dark:text-green-200 italic">
+                        Connect anonymously and find support in a safe community
+                    </p>
+                </div>
             </div>
         </section>
 
@@ -274,7 +305,7 @@
                                 <li><strong>Basic Chat & Call Access</strong> – Users can anonymously connect with others through text or voice calls.</li>
                                 <li><strong>Daily Mood Check-In</strong> – A simple 1–5 scale or emoji-based check-in that helps users reflect on how they feel.</li>
                                 <li><strong>AI Voice Option (Basic)</strong> – Free users can choose between 1–2 soothing AI voices (more in premium).</li>
-                                <li><strong>Trust Score Display</strong> – See other users’ trust levels (built through ratings).</li>
+                                <li><strong>Trust Score Display</strong> – See other users' trust levels (built through ratings).</li>
                                 <li><strong>Basic Filters</strong> – Can choose one preference (either age group or gender) before connecting.</li>
                             </ul>
                         </div>
@@ -452,6 +483,18 @@
                         </div>
                     </div>
                     
+                </div>
+                
+                <!-- Figma Prototype Button -->
+                <div class="mt-12 text-center">
+                    <a 
+                        href="https://www.figma.com/proto/qMoSs1X92YFmF2IFW0YTxP/Meraki?node-id=91-39&t=hLxhR5X4vq2FEJaP-1&starting-point-node-id=4%3A2" 
+                        target="_blank" 
+                        class="inline-flex items-center gap-2 px-8 py-3 bg-green-500 text-white font-semibold rounded-lg shadow-md hover:bg-green-600 transition-colors duration-300"
+                    >
+                        <i class="fa-solid fa-pen-ruler"></i>
+                        Explore Interactive Prototype
+                    </a>
                 </div>
             </div>
         </section>
@@ -675,7 +718,7 @@
                                 <h4 class="font-poppins font-semibold text-lg mb-2">Phase 2: Peer-driven Growth</h4>
                                 <ul class="list-disc list-inside space-y-2 text-green-800 dark:text-cream-200">
                                     <li>Encourage word-of-mouth and peer sharing within friend circles.</li>
-                                    <li>Promote Meraki as a “judgment-free, anonymous zone” for teens to vent.</li>
+                                    <li>Promote Meraki as a "judgment-free, anonymous zone" for teens to vent.</li>
                                 </ul>
                             </div>
                             <div>
@@ -761,6 +804,38 @@
 
         // Main App Logic
         document.addEventListener('DOMContentLoaded', () => {
+            
+            // --- YouTube Video Auto-Pause at 41s ---
+            const heroVideo = document.getElementById('hero-video');
+            let videoInterval;
+            
+            function checkVideoTime() {
+                try {
+                    // We can't directly access the iframe's currentTime due to cross-origin restrictions
+                    // So we'll use a workaround: reload the iframe with a start parameter after 41 seconds
+                    if (videoInterval) clearInterval(videoInterval);
+                    
+                    // Set timeout to reload video after 41 seconds (stops playback)
+                    setTimeout(() => {
+                        // Change the src to stop the video (reload with start parameter)
+                        const currentSrc = heroVideo.src;
+                        if (!currentSrc.includes('end=')) {
+                            heroVideo.src = currentSrc.split('?')[0] + '?autoplay=1&mute=1&controls=1&modestbranding=1&rel=0&start=0&end=41';
+                        }
+                    }, 41000); // 41 seconds
+                } catch (error) {
+                    console.log('Video timing control not available due to cross-origin restrictions');
+                }
+            }
+            
+            // Start checking when video is loaded
+            if (heroVideo) {
+                heroVideo.addEventListener('load', checkVideoTime);
+                // Also check if already loaded
+                if (heroVideo.src) {
+                    checkVideoTime();
+                }
+            }
             
             // --- Toast Notification System ---
             const toastContainer = document.getElementById('toast-container');
